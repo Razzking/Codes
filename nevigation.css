@@ -1,0 +1,85 @@
+th {
+    /* padding: 10px; */
+    /* padding-right: 25px; */
+    border: 2px solid rgb(115, 189, 179);
+    font-size: 16px;
+    text-align: center;
+   
+}
+th:hover {
+    background-color: rgb(42, 165, 138);
+    /* font-weight: 900; */
+    font-size: 25px;
+   
+}
+table {
+    background-color: rgba(63, 216, 183, 0.89);
+    height: 40px;
+    width: 100%;
+    /* border: 2px solid rgb(104, 189, 170); */
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+body{
+    margin: 0px;
+}
+.font{
+    color: black;
+    text-shadow: 1px 1px 1px white;
+    text-decoration: none;
+}
+.font:hover {
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+div{
+    background-color: rgb(42, 165, 138);
+    height: 40px;
+    width: 50px;
+    background-image: url(pngwing.com.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+}
+div:hover {
+    /* background-color: rgb(42, 165, 138); */
+    /* height: 200px; */
+    width: 152px;
+    overflow: visible;
+}
+ul{
+    list-style-type: none;
+    margin: 0px;
+    padding-top: 22px;
+    padding-left: 0px;
+    width: 150px;
+    /* background-color: #f1f1f1; */
+    border: 2px solid rgb(115, 189, 179);
+}
+li{
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-bottom: 2px solid rgb(115, 189, 179);
+}
+li:hover:not(.dash) {
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+}
+.google::before{
+    content: url(pngwing.com1.png);
+}
+.bing::before{
+    content: url(pngwing.com2.png);
+}
+.yahoo::before{
+    content: url(pngwing.com3.png);
+}
+.youtube::before{
+    content: url(pngwing.com4.png);
+}
+.facebook::before{
+    content: url(pngwing.com5.png);
+}

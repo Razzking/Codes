@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="formstyle.css">
+        <title>Registration Form...</title>
+    </head>
+    <body>
+        <div class="div1 ">
+        <fieldset class="curve">
+            <legend class="heading gradient"><h2>Student Registration Form</h2></legend>
+            <form class="padding">
+    <!-- basic data input -->
+                <label for="fname">First Name : </label>
+                <input type="text" id="fname" name="fname" placeholder="Your First Name" required>
+                <label for="lname">&emsp;&emsp;Last Name : </label>
+                <input type="text" id="lname" name="lname" placeholder="Your Last Name"><br><br> 
+                <label for="email">Email Id &emsp;: </label>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="phone">Phone No : </label><br>
+    <!-- contries call code -->
+                <label for="tel"></label>
+                <select id="tel" name="tel">
+                    <option value="india">+91</option>
+                    <option value="uk">+44</option>
+                    <option value="usa">+1</option>
+                    <option value="china">+86</option>
+                    <option value="ast">+61</option>
+                </select>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" maxlength="10" required>
+              <br>
+    <!-- Gender sel by radio button -->
+              <p>Gender :-</p> 
+                <label for="gender1">Male </label>
+                <input type="radio" id="gender1" name="gender">
+                <label for="gender2">&emsp;Female </label>
+                <input type="radio" id="gender2" name="gender">
+                <label for="gender3">&emsp;Other </label>
+                <input type="radio" id="gender3" name="gender">
+                <br><br>
+    <!-- State sel -->
+                <label for="state">State : </label>
+                <select id="state" name="state">
+                    <option value="Asam">Asam</option>
+                    <option value="delhi">Delhi</option>
+                    <option value="Rajisthan">Rajisthan</option>
+                    <option value="Hariyana">Hariyana</option>
+                    <option value="Up">Uttar Pradesh</option>
+                </select><br><br>
+    <!-- D.O.B sel -->
+                <label for="dob">D.O.B :</label>
+                <input type="date" id="dob" name="dob" min="1980-01-01" max="2023-12-30" required>
+                <br><br>
+                <a><input type="submit" id="submit" value="Submit"></a>
+                <a><input type="reset" value="Reset"></a><br><br>
+            </form>
+        </fieldset>
+        </div>
+        <form>
+    <!-- feedback option -->
+            <p>&emsp;&emsp;Write about yourself below</p>
+            <textarea class="div1 padding" name="" rows="13" cols="40" placeholder="type here..."></textarea>
+            
+            <a href="https://www.google.com" title="submit" ><input type="button" value="submit"></a>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Arrays</h1>
+<h2>The push() Method</h2>
+
+<p>push() adds new items to the end of an array:</p>
+<input type="text" id="input_id">
+<button type="button" id="submit">submit</button>
+
+<p id="demo"></p>
+<p id="sum"></p>
+
+<script>
+
+// const fruits = ["Banana", "Orange", "Apple", "Mango"];
+// fruits.push(input);
+
+const submit = document.getElementById("submit");
+let sum = 0;
+submit.addEventListener("click",function(){
+const input1 = document.getElementById("input_id").value;
+
+
+// console.log(input1.length);
+var len = input1.length;
+//  let len2 = len;
+// console.log(typeof(len));
+
+let temp;
+const num = Array.from(input1);
+console.log(typeof sum);
+// console.log(num);
+len--;
+for(i=0 ;i<=len ;i++){
+  // if(i==0){
+  // sum = sum + Number(num[i]);
+    temp = num[i];
+    // console.log(num);
+    num[i] = num[len];
+    //  console.log(num);
+    num[len] = temp;
+      console.log(num);
+     len--;
+      // sum = sum + Number(num[i]);
+    //  console.log(typeof num[i]);
+}
+var result =  num.map(function(x){
+  sum = sum + parseInt(x);
+  return sum;
+})
+// for(j=0 ; j<=len2 ; j++)
+// {sum = sum + result[j];
+// console.log(typeof result[j]);
+// }
+//   result.forEach(function(y){
+//   sum = sum + y;
+//   return sum;
+// })
+console.log(result)
+text = num.join("");
+demo.innerHTML = text;
+document.getElementById("sum").innerText = sum;
+sum = 0;
+console.log(sum);
+});
+</script>
+
+</body>
+</html>

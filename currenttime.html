@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current_time</title>
+</head>
+<style>
+    #time{text-align: center;}
+    #start{padding: 10px 20px;}
+    div input{display: none;}
+    div label{
+        position: relative;
+        display: block;
+        width: 50px;
+        height: 25px;
+        background-color: #999;
+        margin: 20px 0px;
+        border-radius: 30px;
+    }
+    div label::before{
+        position: absolute;
+        top: 2px;
+        left: 3px;
+        content: "";
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-color: #eee;
+        border-radius: 20px;
+    }
+    div input:checked + label{
+        background-color: rgba(49, 173, 255, 0.932);
+    }
+    div input:checked + label::before{
+        left: 27px;
+    }
+</style>
+<body>
+    <h1 id="time">Time</h1>  
+    <button id="startBtn" >Start</button>
+    <!-- <button id="stopBtn" >Hide</button> -->
+    <div class="contain">
+        <input type="checkbox" id="timeformate">
+        <label for="timeformate"></label>
+    </div>
+</body>
+<script>
+    let intervalID;
+    let intervalID2;
+    // Funtion to start only globle time setInterval Call
+    function start(){
+        intervalID = setInterval(fun1, 1000);
+        fun1()
+    }
+
+    // Function to stop all setInterval call
+    function stop(){
+        clearInterval(intervalID);
+        clearInterval(intervalID2);
+        time.innerText = "Time"
+    }
+    //Globle time formate...
+    function fun1()
+    {
+    // to Get Current_time Global
+        let today = new Date();
+        let hours = today.getHours();
+        let min = today.getMinutes();
+        let sec = today.getSeconds();
+        if(sec<10)
+        {
+            sec = '0'+ sec;     // for start time like 01,02 etc...
+        }
+        else if (min<10){ min = '0'+ min;}
+        let current_date = `${hours}:${min}:${sec}`;    //time print formate..
+        time.innerText = current_date;
+        console.log(current_date);
+    }
+    function hours12()      // indian time formate...
+    {  
+        let today = new Date();
+        let hours = today.getHours();
+        let min = today.getMinutes();
+        let sec = today.getSeconds();
+        if(hours>=12)
+        {
+            hours = hours-12;
+            hours = "0"+ hours;
+            sec = sec+ "   {P.M} "      // for add AM & PM formate..
+        }
+        else
+        {sec = sec+ "   {A.M} ";}
+        // again for print time..
+        if(sec<10)
+        {
+            sec = '0'+ sec;
+        }
+        else if (min<10)
+        { min = '0'+ min;}
+        
+        let current_date = `${hours}:${min}:${sec}`;
+        time.innerText = current_date;
+        console.log(current_date);
+        
+        }
+    // stop & start button condition apply...    
+    let isStart = false;
+    const startBtn = document.getElementById("startBtn")
+    startBtn.addEventListener("click", function(){
+        isStart ? stop() :  start()
+        startBtn.textContent = !isStart ? 'Stop' : 'Start'
+        isStart = !isStart;
+    });
+    // Time formate changing button apply....
+    let istime = false;
+    const timeformate = document.getElementById("timeformate")
+    timeformate.addEventListener("click", function(){
+        if(istime == false)
+        {
+            clearInterval(intervalID);
+            intervalID2 = setInterval(hours12, 1000);
+            hours12();
+        }
+        else
+        {
+            clearInterval(intervalID2);
+            intervalID = setInterval(fun1, 1000);
+            fun1()
+        }
+        istime=!istime;
+    });
+</script>
+</html>

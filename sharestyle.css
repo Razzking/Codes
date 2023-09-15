@@ -1,0 +1,49 @@
+.boss{
+    background-color: red;
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+}
+h3{
+    padding-top: 5px;
+}
+ div:active {
+    background-color: aqua;
+}
+
+ul{
+    visibility: hidden;
+    /* display: block; */
+    position: absolute;
+    top: 58%;
+    left: 35%;
+    padding: 20px;
+    margin: 0px;
+}
+.boss:hover + ul {
+    visibility: visible;
+}
+.ww:hover {
+    visibility: visible;
+}
+li:hover {
+    border: 5px solid rgb(230, 200, 200);
+    background-color: rgb(208, 238, 238);
+    color: white;
+    text-shadow: 1px 1px  black , 1px 1px 3px black;
+    border-radius: 50%;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+li{
+    display: inline-block;
+    border: 2px solid red;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 18px;
+}

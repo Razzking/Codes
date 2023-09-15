@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Events</title>
+</head>
+<style>
+    .border{
+        border: 2px double red;
+        margin: 0px 100px;
+        background-color: rgb(243, 210, 210);
+        overflow: auto;
+    }
+    #para{
+        overflow: auto;
+        padding: 10px 50px;
+        font-family: Arial, Helvetica;
+    }
+    p::first-letter{
+        font-size: 30px;
+        color: red;
+    }
+    #btn{
+        padding: 10px 20px;
+        background-color: rgb(213, 217, 221);
+        border: 2px solid black;
+        border-radius: 20px;
+        margin: 100px 100px;
+        background-attachment: fixed;
+    }
+</style>
+<body>
+    <div class="border">
+    <h1>Heading...</h1>
+    <p id="para">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus esse illo ipsam, et ullam porro dolorum adipisci saepe quaerat, nihil autem doloremque ratione quibusdam doloribus! Possimus saepe recusandae doloremque delectus nobis porro voluptatem. Fuga aperiam delectus eligendi eos. Aut eligendi fugit sunt pariatur totam blanditiis vitae facere enim eum, numquam excepturi earum quasi deserunt reprehenderit impedit voluptatum delectus obcaecati! Voluptates ea corrupti eaque, tenetur distinctio quidem illo autem soluta magnam, vitae molestias qui totam cum maxime iusto maiores voluptatibus aspernatur, sint architecto ab in! Rerum, excepturi reprehenderit quod in sequi ab molestiae accusamus voluptas. Beatae cum voluptatum ipsam cupiditate blanditiis?</p>
+</div>
+    <button id="btn" onclick="funtion()">Hide</button>
+</body>
+<script>
+    let btn = document.getElementById("btn");
+    let para = document.getElementById("para");
+    function funtion(){
+        if(para.style.display != "none"){
+            para.style.display = "none";
+            btn.innerHTML = "Show";
+        }
+        else{
+            para.style.display = "block";
+            btn.innerHTML = "Hide";
+        }
+    }
+
+</script>
+</html> 
