@@ -3,20 +3,26 @@
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     text-shadow: 2px 2px 3px black , 0 0 20px purple, 0 0 25px blueviolet;
+    width: auto;
    }
 .div1{
     /* background-color: rgba(147, 204, 231, 0.199); */
     background-image: url(https://img.freepik.com/free-vector/gradient-blur-pink-blue-abstract-background_53876-117324.jpg?w=740&t=st=1693973424~exp=1693974024~hmac=972b8c8eba59e6418839f644929d9bd0e7f1c9ccaa04fd179c15ac53146afffc);
     background-size: cover;
     border-radius: 40px;
+    
     /* padding-left: 20px;
     padding-right: 20px; */
+    width: auto;
 }   
 body{
+    width: auto;
     border-style: ridge;
     border-width: 7px;
     border-radius: 40px;
     border-color: aquamarine;
+    display: block;
+   
     /* padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 30px; */
@@ -25,6 +31,7 @@ body{
 }
 .curve{
     border-radius: 40px;
+   
 }
 .padding{
     /* padding-left: 20px;
@@ -51,4 +58,15 @@ a :hover{
 textarea{
     resize: none;
     overflow: vertical;
+    width: auto;
+}
+@media (max-width: 500px){
+    body{
+        padding: 20px;
+        margin: 20px;
+    }
+    .curve{
+        height: 50%;
+    }
+    
 }

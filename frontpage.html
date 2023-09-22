@@ -1,0 +1,60 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Page</title>
+    <link rel="stylesheet" href="frontpage.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <h2>LOGO</h2>
+            <div class="nav-items">
+                <i><img src="pngwing.com.png" alt="icone" id="icone" onclick="fun()"></i>
+                <ul id="ul">
+                    <li class="ul">Home</li>
+                    <li class="ul">Student Info</li>
+                    <li class="ul">Marksheet</li>
+                    <li class="ul">About</li>
+                </ul>
+            </div>   
+        </div>
+        <div class="box1" id="box1"></div>
+            <div class="box" id="box">
+        
+            <div class="leftcontent">
+                <h1>PROTECT OUR <span>WILDLIFE</span></h1>
+                <p>The Act prohibited the hunting of endangered species. Scheduled animals are prohibited from being traded as per the Act's provisions. The Act provides for licenses for the sale, transfer, and possession of some wildlife species. It provides for the establishment of wildlife sanctuaries, national parks, etc.</p>
+                <button id="explore" class="explore">EXPLORE</button>
+            </div>
+            <div class="rightcontent">
+                <img src="images/4960158.jpg" alt="wildlife">
+            </div>
+            </div>
+        
+    </div>
+    <script>
+        let isStart = false
+        function fun(){
+            let sel = document.getElementById('ul');
+            let box =  document.getElementById('box');
+            // sel.style.display = "block";
+            // isStart ? stop() :  start()
+            // sel.style.display = !isStart ? 'block' : 'none'
+            if(isStart == 0)
+            {
+                sel.style.display = "block";
+                console.log(sel)
+            }
+            else{
+                sel.style.display = "none";
+            }
+            isStart = !isStart;}
+        // document.getElementById("box").style.cssText = 
+        //         `background-color:pink; 
+        //         font-size:55px; color:white;`
+
+    </script>
+</body>
+</html>

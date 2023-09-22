@@ -10,7 +10,7 @@
     <div class="full">
         <div class="backgrondeffect">
             <div class="png">
-                <img src="facebook.png" alt="facebook">
+                <img src="images/facebook.png" alt="facebook">
             </div>
             <div class="login">
                 <div class="head">
@@ -19,7 +19,7 @@
                 <div class="input">
                     <form >
                         <div class="head logd" id="add">
-                            <input type="text" class="name" id="name" placeholder="Email address or phone number">
+                            <input type="email" class="name" id="name" placeholder="Email address or phone number" required>
                         <p id="error_name"></p>   
                         </div>
                         <div class="head logd">
@@ -45,23 +45,21 @@
     let ptext = document.getElementById("error_name")
     const pass = document.getElementById("pass")
     const submit = document.getElementById("submit")
-    document.getElementById("submit").addEventListener("click",function(e){ 
-        const name = document.getElementById("name").value;
-        console.log(name)
-        if(name.length <1)
-        {
+    document.getElementById("name").addEventListener("invalid",function(e){ 
+        
             document.getElementById("name").style.border= "1px solid red";
             document.querySelector(".login").style.height= "330px";
             ptext.style.cssText = "display : block"
             ptext.innerText= "the email address you entered isn't connected to an account."
             e.preventDefault();
-        }
-    })
+    }
+    )
 
     document.getElementById("name").addEventListener("input", function(){
         ptext.textContent= ""
         ptext.style.cssText = "display : none"
         document.getElementById("name").style.border= "1px solid rgb(197, 197, 197)";
+        console.log(name)
     })
 </script>
 </html>
