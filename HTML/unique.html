@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/unique.css">
+    <title>MAN IN SPACE</title>
+</head>
+
+<body>
+    <div class="image">
+        <img src="/images/space.jpg" alt="space">
+        <div class="navbar">
+            <ul class="navlist">
+                <li>Home</li>
+                <li>Registration</li>
+                <li>Details</li>
+                <li>Service</li>
+                <li>About</li>
+            </ul>
+            <button class="btn">Signup</button>
+        </div>
+
+        <div class="text">
+            <h1>𝕄𝔼ℕ 𝕀ℕ 𝕊ℙ𝔸ℂ𝔼</h1>
+        </div>
+
+        <div class="speech">
+            <p id="type"></p>
+        </div>
+    </div>  
+    <div class="nextpage">
+        <img src="/images/space3.jpg" alt="space3">
+    </div>
+    <div class="nextpage">
+        <img src="/images/space2.jpg" alt="space2">
+    </div>
+</body>
+<script>
+    var i = 0;
+    var text = `Imagine you and your family are astronauts on the space station right now. You can only use the resources available to you. How would you adapt to the challenges and still keep doing important routines, like exercising, learning and making time for fun?`;
+    function typewriter() {
+        if (i <= text.length) {
+            document.getElementById("type").innerHTML += text.charAt(i);
+            console.log(i)
+            i++;
+            setTimeout(typewriter, 40)
+        }
+        // else(remove())
+    }
+    typewriter();
+
+    setTimeout(()=> {
+        function remove(){
+            if (text.length !== 0) {
+                const temp = text.split('')
+                temp.pop();
+                text = temp.join('')
+                document.getElementById("type").innerHTML = text;
+                setTimeout(remove, 40)
+            }
+        }
+        remove();
+    }, 13000);
+
+
+    /*    var i = text.length;
+        function remove(){
+            if(i !==0 ){
+                //  delete text.charAt(text.length)
+                pop(text.charAt(i))
+                console.log(text)
+                setTimeout(remove, 5000)
+                i--;
+            }
+        }
+        remove();*/
+</script>
+
+</html>
