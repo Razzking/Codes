@@ -334,11 +334,11 @@
 // }
 
 //Q.    traingle
-
+// console.time()
 // function triangle(triangleSize) {
 //     let rowSize=triangleSize;
 //     let leftCol,rightCol,row;
-//     let s = " ";
+//     let s = "";
 
 //     for(row=1; row<=triangleSize; row++){
 
@@ -366,11 +366,12 @@
 //     leftCol=0;
 //     rowSize-=1;
 //     console.log(s)
-//     s = " ";
+//     s = "";
 //     }
 // }
 // triangle(5)
-
+// console.timeEnd()
+// console.time()
 // let n;
 // let string = "";
 // function triangle(n) {
@@ -393,7 +394,8 @@
 //     }
 // return string;
 // }
-// console.log(triangle(10))
+// console.log(triangle(5))
+// console.timeEnd()
 
 // let obj = {
 //     jk: function () {
@@ -438,15 +440,18 @@
 // console.log(library[0])
 
 //Q. 
-let arr = [12,32,-12,71,12,-2,23];
-function shorting(arr){
-    for(let i=0 ; i<arr.length; i++)
-    {
-        for(let j=i+1; j< arr.length; j++){
-        if(arr[i] > arr[j]){
-            [arr[i] , arr[j]] = [arr[j],arr[i]]
-        }}  
-    }
-}
-shorting(arr);
-console.log(arr)
+// console.time()
+// let arr = [12,32,-12,71,12,-2,23];
+// function shorting(arr){
+//     for(let i=0 ; i<arr.length; i++)
+//     {
+//         for(let j=i+1; j< arr.length; j++){
+//         if(arr[i] > arr[j]){
+//             [arr[i] , arr[j]] = [arr[j],arr[i]]
+//         }}  
+//     }
+// }
+// shorting(arr);
+// console.timeEnd();
+// console.log(arr)
+
