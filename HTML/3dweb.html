@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="3dweb.css">
+    <title>LOGIN MOB</title>
+</head>
+
+<body>
+    <div class="videocontainer">
+<!-- Background video -->
+        <video autoplay muted >
+            <source src="/images/3dstyle.mp4" type="video/mp4" />
+        </video>
+<!-- Navigation Bar -->
+        <div class="navbar">
+            <h2 style="color: #5bffdb;">LOGO</h2>
+<!-- Navigation Bar List  -->
+            <ul class="navlist">
+                <li>Home</li>
+                <li>Registration</li>
+                <li>Details</li>
+                <li>Service</li>
+                <li>About</li>
+            </ul>
+        </div>
+<!-- Sign-up & Login Box -->
+        <div id="login" class="login">
+            <div  class="head">
+                <p id="signuptext">SIGN UP</p>
+            </div>
+<!-- Input Field In Login box -->
+            <div class="input">
+                <form >
+<!-- Fname & Lname Input Field -->
+                    <div id="username" class="head logd username">
+                        <input type="text" class="name" placeholder="First Name" required>
+                        <input type="text" class="name" placeholder="Last Name" >
+                    </div>
+<!-- Email Input Field -->
+                    <div class="head logd">
+                        <input type="email" class="name" placeholder="Email address or phone number" required>
+                    </div>
+<!-- Password Input Field -->
+                    <div class="head logd">
+                        <input type="password" class="password" id="pass" placeholder="Password" required>
+                    </div>
+<!-- Login & Signup Button -->
+                    <div class="logd submit">
+                        <input type="submit" value="Sign up" class="loginbutton" id="submit">
+                    </div>
+                    <p class="head logd">Already have an account?<span id="log_in"> Log in </span></p>
+                    <hr>
+<!-- Direct Google Login Button -->
+                    <div class="logd submit">
+                        <input type="button" value="Login with Google" class="loginbutton google" id="submit">
+                    </div>
+<!-- Direct Facebook Login Button -->
+                    <div class="logd submit">
+                        <input type="button" value="Login with Facebook" class="loginbutton google facebook" id="submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<script>
+    let islogin = false;
+    let signuptext =document.getElementById("signuptext")
+    let username =  document.getElementById("username")
+    let submit = document.getElementById("submit")
+    let log_in = document.getElementById("log_in");
+    let signup = document.getElementById("login")
+
+    log_in.addEventListener("click" , ()=>{
+        if(islogin == true)
+        {
+            signup.classList.remove("signup");
+            signuptext.innerText = "SIGN UP";
+            username.style.display = "flex";
+            log_in.innerText = "Log in"
+        }
+        else
+        {
+            signup.classList.add("signup");
+            signuptext.innerText = "LOGIN";
+            username.style.display = "none";
+            log_in.innerText = "Sign up"
+
+        }
+        islogin = !islogin;
+    })
+    
+</script>
+</body>
+
+</html>
