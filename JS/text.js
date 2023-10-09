@@ -265,7 +265,7 @@
 // let str = "123-456-789"
 // let arr = [];
 // let k = 0, str2 = '';
-// let sep = "54"
+// let sep = "-"
 // for (let i = 0; i <= str.length; i++) {
 //         if (str[i] === sep || i === str.length) {
 //                 arr[k] = str2;
@@ -372,29 +372,29 @@
 // triangle(5)
 // console.timeEnd()
 // console.time()
-// let n;
-// let string = "";
-// function triangle(n) {
+let n;
+let string = "";
+function triangle(n) {
 
-//     for(let i=1; i<=n ; i++){
-//         for(let j=1; j<= n-i; j++){
-//             string+=" ";
-//         }
-//         for(let k=0 ; k < 2*i-1; k++){
-//             if(i===n && k < n){
-//                 string+="* ";
-//             }
-//             else{
-//                 if( k===0 || k=== 2*i-2  && i!=n ){
-//                     string+="*";
-//                 }else{string+=" ";}
-//             }
-//         }
-//         string+="\n"
-//     }
-// return string;
-// }
-// console.log(triangle(5))
+    for (let i = 1; i <= n; i++) {
+        for (let j = 1; j <= n-i; j++) {
+            string += " ";
+        }
+        for (let k = 1; k <= 2*i; k++) {
+            if (i === n && k <= n) {
+                string += "* ";
+
+            } else {
+                if (k === 1 || k === 2*i-1 && i != n) {
+                    string += "*";
+                } else { string += " "; }
+            }
+        }
+        string += "\n"
+    }
+    return string;
+}
+console.log(triangle(5))
 // console.timeEnd()
 
 // let obj = {
@@ -455,3 +455,121 @@
 // console.timeEnd();
 // console.log(arr)
 
+// let arr = [1,2,3,4,5]
+// let item =[0,9,8]
+// let del = [0,2,4]
+// arr.push(...item)
+// arr[3] = 22
+
+// console.log(arr)
+
+//Q
+// function cut(arrname,start, end ,array) {
+//     console.log(array)
+//     let gap = end -start;
+//     for(i =start; i< arrname.length ; i++ ){
+//         if(arrname[i+gap+1] === undefined)
+//         {
+//             for (let j = i; j < arrname.length; j++)
+//             {
+//                 delete arrname[j]
+//             }
+
+//             return arrname;
+//         }
+//         arrname[i] = arrname[i+gap+1]   
+//     }
+//     if(start >= arrname.length){
+//         return arrname;
+//     }
+// }
+// arr = [1,2,3,4,5,6]
+// console.log(cut(arr ,2,3,["hello",2,4,6,7]))
+
+// testing
+// function cut(arrname,start, end ,array) {
+//     if(start > end){
+//         return "Somthing Went Wrong!!!"
+//     }
+//     let arr2 = [];
+//     for(let i = arrname.length ; i> end+1; i--){
+//             arr2.unshift(arrname.pop());
+//         }
+//     arrname.length = start;
+//     arrname.push(...array,...arr2)
+//     return arrname;
+// }
+// arr = [1,2,3,4,5,6]
+// console.log(cut(arr ,1,2,["hello",2,4,6,"bye-bye"]))
+
+//testing 2
+// function cut(arrname, start, end, ...array) {
+//     console.log(typeof arrname)
+//     if (start > end || typeof start != typeof end) {
+//         return "Somthing Went Wrong!!!"
+//     }
+//     let arr2 = [];
+//     for (let i = arrname.length; i > end + 1; i--) {
+//         arr2.unshift(arrname.pop());
+//     }
+//     arrname.length = start;
+//     arrname.push(...array, ...arr2)
+//     return arrname;
+// }
+// arr = [1,2,3,4,5,6]
+// console.log(cut(arr,1,2,"hello",2,4,6,"bye-bye"))
+
+// let arr1= [1,2,3,4,5];
+// let arr2= [10,9,8,7,6];
+// [arr1,arr2] = [arr2,arr1];
+// console.log(arr1);
+// console.log(arr2);
+
+// let a = new Number(10);
+// let b = new Number(10);
+// let c = a;
+// let a = [1,2,3,4,5]
+// let b = [1,2,3,4,5]
+// let c = a;
+// let a = function(){return 1+1}
+// let b = function(){return 1+1}
+// let c = a;
+// console.log(a===c)
+
+// let obj = {
+//     name : "rajnish",
+//     lname: "kumar",
+//     age : 18,
+// }
+// let map = new Map();
+// map.set("name","rajnish")
+// map.set("lname","kumar")
+// map.set("age",18)
+
+// for(const key of obj){
+//     console.log(key)
+// }
+
+// for(const [key,value] of map)
+// {
+//     console.log(value)
+// }
+// for(const key in map){
+//     console.log(key)
+// }
+
+
+// {
+//     obj1 = {
+//         name: "rajnish",
+//         obj2: {
+//             lname: "kumar",
+//             arr: [12, 18, { gender: "male", phone: 123 }]
+//         }
+//     }
+// }
+// console.log(obj1.obj2.arr[2].phone);
+// const { name, obj2 } = obj1
+// const { lname, arr } = obj2
+
+// console.log(name, obj2, lname, arr)

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tudo</title>
+</head>
+
+<body id="list">
+    <div id="add">
+        <form >
+            <input type="text" id="addElement">
+            <input type="submit" value="Add" id="addButton">
+        </form>
+    </div>
+    <hr>
+    <div id="search">
+        <form >
+            <input type="text" id="searchElement">
+            <input type="submit" value="search" id="searchButton">
+        </form>
+    </div>
+    <div id="demo"></div>
+
+</body>
+<script>
+    let add = [], items = [], text = [];
+    let i = 0;
+    let list = document.getElementById("list")
+    let demo = document.getElementById("demo")
+
+/*  Add Elements    */
+    document.getElementById("addButton").addEventListener("click", (e) => {
+        demo.style.cssText = "display : none";
+        add[i] = document.getElementById("addElement").value;
+        items[i] = document.createElement("div");
+        text[i] = document.createElement("h3");
+        text[i].append(add[i]);
+        items[i].append(text[i]);
+        list.append(items[i]);
+        i++;
+        e.preventDefault();
+    })
+
+/*      Search Elements     */
+    document.getElementById("searchButton").addEventListener("click", (e) => {
+        let search = document.getElementById("searchElement").value;
+        let find = [];
+        let j = 0; 
+        console.log(search);
+        for (let findex = 0; findex < add.length; findex++)
+/*  Search Elements By Same-Words      */
+        // {
+        //     if (add[findex] == search) 
+        //     {
+        //         find[j] = add.indexOf(add[findex], findex)
+        //         j++;
+        //     }
+        // }
+
+/*      Search Elements By Same-Letters     */
+            {
+                let temp = false;
+                for(let char = 0; char<search.length; char++){
+                    if(add[findex].charAt(char) === search.charAt(char))
+                    {
+                        temp = true;
+                    }else{temp = false}
+                }
+                if(temp == true){
+                    find[j] = add.indexOf(add[findex], findex);
+                    j++;
+                }
+            }
+
+/*      Display All Search Elements     */
+        j = 0;
+        for (let index = 0; index < add.length; index++) 
+        {
+            if (index === find[j])
+            {
+                items[index].style.cssText = "display : block";
+                j++;
+            } else { items[index].style.cssText = "display : none"; }
+        }
+
+/*      When Search Elements Not Found !!!      */
+        if (find.length == 0) 
+        {
+            demo.style.cssText = "display : block";
+            demo.innerHTML = "Not Found!!!";
+        } else { demo.style.cssText = "display : none"; }
+        e.preventDefault();
+    });
+
+</script>
+
+</html>
