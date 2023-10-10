@@ -372,29 +372,29 @@
 // triangle(5)
 // console.timeEnd()
 // console.time()
-let n;
-let string = "";
-function triangle(n) {
+// let n;
+// let string = "";
+// function triangle(n) {
 
-    for (let i = 1; i <= n; i++) {
-        for (let j = 1; j <= n-i; j++) {
-            string += " ";
-        }
-        for (let k = 1; k <= 2*i; k++) {
-            if (i === n && k <= n) {
-                string += "* ";
+//     for (let i = 1; i <= n; i++) {
+//         for (let j = 1; j <= n-i; j++) {
+//             string += " ";
+//         }
+//         for (let k = 1; k <= 2*i; k++) {
+//             if (i === n && k <= n) {
+//                 string += "* ";
 
-            } else {
-                if (k === 1 || k === 2*i-1 && i != n) {
-                    string += "*";
-                } else { string += " "; }
-            }
-        }
-        string += "\n"
-    }
-    return string;
-}
-console.log(triangle(5))
+//             } else {
+//                 if (k === 1 || k === 2*i-1 && i != n) {
+//                     string += "*";
+//                 } else { string += " "; }
+//             }
+//         }
+//         string += "\n"
+//     }
+//     return string;
+// }
+// console.log(triangle(5))
 // console.timeEnd()
 
 // let obj = {
@@ -428,10 +428,7 @@ console.log(triangle(5))
 //     {
 //         author: 'Suzanne Collins',
 //         title:  'Mockingjay: The Final Book of The Hunger Games', 
-//         readingStatus: false
-//     }];
-// for(key in library){
-// // console.log(key)
+//         readingStatus: falseme = name;
 //     if(library[key].author === "Steve Jobs")
 //     {
 //         console.log(library[key]);
@@ -573,3 +570,26 @@ console.log(triangle(5))
 // const { lname, arr } = obj2
 
 // console.log(name, obj2, lname, arr)
+
+/**/
+// class obj {
+//    function obj(title , id){
+//         this.title = title,
+//         this.id = id,
+//         this.mob = new Date();
+//     }
+// }
+let arr = [];
+for(let i=0; i<10; i++){
+    arr.push({
+        title: `title ${i}`,
+        id: i,
+        mob: Date.now(),
+    })};
+
+let index = arr.findIndex((key)=>{
+    return key.title == "title 2"
+})
+delete arr[index]
+console.log(arr[index+1])
+

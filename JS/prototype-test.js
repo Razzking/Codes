@@ -81,4 +81,4 @@ const person = new teacher("rajnish", "raj@gmail.com", 1000, "acp")
 
 const user1 = new user("raj", "degydged", "782781")
 person.logME();
-console.log(user1.fulldetails(121))
+// console.log(person.)
