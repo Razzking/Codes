@@ -579,17 +579,82 @@
 //         this.mob = new Date();
 //     }
 // }
-let arr = [];
-for(let i=0; i<10; i++){
-    arr.push({
-        title: `title ${i}`,
-        id: i,
-        mob: Date.now(),
-    })};
+// let arr = [];
+// for(let i=0; i<10; i++){
+//     arr.push({
+//         title: `title ${i}`,
+//         id: i,
+//         mob: Date.now(),
+//     })};
 
-let index = arr.findIndex((key)=>{
-    return key.title == "title 2"
-})
-delete arr[index]
-console.log(arr[index+1])
+// let index = arr.findIndex((key)=>{
+//     return key.title == "title 2"
+// })
+// delete arr[index]
+// console.log(arr[index+1])
 
+// const text = '{"name":"John", "birth":"1986-12-14", "city":"New York"}';
+// const obj = JSON.parse(text, function (key, value) {
+//   return key += "hello";
+// });
+// console.log(obj)
+
+// const obj ={
+//   fun1(x){
+//     return 575
+//   },
+//   fun2(){
+//    return  this.fun1() -"75"
+//     }
+// }
+// console.log(obj.fun1() , obj.fun2())
+
+/*         Promises    */
+// const promises = new Promise(function(resolve , reject){
+//   setTimeout(() =>{
+//     let x = [1,2,3,4];
+//     if( x[0] > 0 ){
+//     resolve(x);
+//     }
+//     else{
+//       reject(x + 10)
+//     }
+//   },2000)
+// })
+
+// console.log(promises);
+
+// promises
+// .then((x) => {
+//   console.log(x.map(value => {
+//    return value + 1;
+//   }))
+// })
+// .then((x) => {
+//   x += 5;
+//   console.log(`x ${x}`);
+// })
+// .catch( (x) => {
+//   console.log(`x ${x}`)
+// })
+
+// async function p1() {
+//   const p2 = await new Promise((resolve) => setTimeout(() => {
+//     resolve(" p2 promise resolve!!!")
+//   }, 2000));
+//   // console.log(p2)
+//   return "  p1 promise resolve!!  " + p2;
+// }
+
+// p1().then((x) => console.log(x))
+// console.log(p1)
+
+let arr = [1,2,3,4,5]
+// let arr2 = [5,6,7,8]
+// // console.log(arr.filter((value) => value > 1 ));
+// // arr = arr.concat(2);
+// // arr = arr.join(arr2)
+//  let arr3 = arr.flat(1)
+
+let arr2 = arr.forEach((value, index, array) => array.push(2))
+console.log(arr)

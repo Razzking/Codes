@@ -26,11 +26,11 @@
 
 </body>
 <script>
-    let add = [], items = [], text = [], button = [];
-    let i = 0;
+    // let add = [], items = [], text = [], button = [];
+    // let i = 0;
     let list = document.getElementById("list")
     let todoListDiv = document.getElementById("todo-list")
-
+    
     /*
       todo = {
           id: number;
@@ -168,25 +168,63 @@
     // document.getElementById("addButton").addEventListener("click", showTodos(todos ))
 
 
-    function showTodos(todos) {
-        todoListDiv.innerHTML = ''
-        const dfr = document.createDocumentFragment()
+    // function showTodos(todos) {
+    //     todoListDiv.innerHTML = ''
+    //     const dfr = document.createDocumentFragment()
 
-        todos.forEach(todo => {
-            const eleLi = document.createElement('li')
-            eleLi.textContent = todo.title;
+    //     todos.forEach(todo => {
+    //         const eleLi = document.createElement('li')
+    //         eleLi.textContent = todo.title;
 
-            dfr.appendChild(eleLi)
-        });
+    //         dfr.appendChild(eleLi)
+    //     });
 
-        todoListDiv.appendChild(dfr)
-    }
+    //     todoListDiv.appendChild(dfr)
+    // }
 
-    const filteredTodos = todos.filter((todo) => todo.title.includes("Todo"))
-    console.log(filteredTodos)
+    // const filteredTodos = todos.filter((todo) => todo.title.includes("Todo"))
+    // console.log(filteredTodos)
 
-    showTodos(filteredTodos)
+    // showTodos(filteredTodos)
     /*      Delete Elements     */
+    function showTitle(arr, todoListDiv) {
+        const dfr = document.createDocumentFragment();
+        eleLi = document.createElement('li');
+        button = document.createElement('button')
+        button.textContent = "Delete";
+        button.value = arr.id;
+        eleLi.textContent = arr.title;
+        eleLi.appendChild(button);
+        dfr.appendChild(eleLi);
+        todoListDiv.appendChild(dfr);
+
+    }
+    
+    // let button;
+    let arr = [];
+    i = 0;
+    document.getElementById("addButton").addEventListener("click", () => {
+        arr.push({
+            title: document.getElementById("addElement").value,
+            id: i,
+            mob: Date.now(),
+        })
+        
+        showTitle(arr[i], todoListDiv);
+        if(arr[i].id == 2){
+            console.log(button)
+            let empty = document.createElement("li")
+            todoListDiv.replaceChild(empty,eleLi)
+            console.log(todoListDiv.children)
+        }
+        i++;
+    });
+
+
+    // let index = arr.findIndex((key) => {
+    //     return key.title == "title 2"
+    // })
+    // delete arr[index]
 
 </script>
 
