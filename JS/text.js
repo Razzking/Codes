@@ -649,12 +649,127 @@
 // p1().then((x) => console.log(x))
 // console.log(p1)
 
-let arr = [1,2,3,4,5]
-// let arr2 = [5,6,7,8]
-// // console.log(arr.filter((value) => value > 1 ));
-// // arr = arr.concat(2);
-// // arr = arr.join(arr2)
+let arr = [1, 2, 3, 4, 5, 6, 7, 8]
+let arr2 = [5, 6, 7, 8]
+// console.log(arr.map((value, index, array) => {
+//     index+=2;
+//     return array[index]
+// }));
+// arr = arr.concat(2);
+// arr = arr.join(arr2)
 //  let arr3 = arr.flat(1)
+// let a = arr.forEach((value) => {
+// //    let v = {name : "raj"}
+//    console.log(this)
+//  })
+// let num = 1234;
+// let bolean = true;
+// const obj ={
+//     a: 1,
+//     b: 2,
+//     c: 3,
+// }
 
-let arr2 = arr.forEach((value, index, array) => array.push(2))
-console.log(arr)
+// // arr2 = arr.forEach((value, index, array) => array.push(2))
+// for (const key in obj) {
+//     console.log(key , obj[key])
+// }
+
+// arr.forEach( (value , index)=> {
+//     if(value < 4){
+//         console.log(value)
+//         // break
+//     }
+//     else{
+//     console.log("break")
+//     arr.length = index + 1}
+// })
+// arr.length = 9
+// console.log(arr);
+
+// console.log(obj[])
+// console.log(num.toString().includes(2) + false)
+//      every , some , findindex , indexof , find , forEach , break , object.keys , object.value 
+
+let obj = {
+    name: "rajnish",
+    lname: "kumar",
+}
+// for(let [k ,v] of Object.entries(obj)){
+//     console.log(k);
+// }
+// let a = Object.values(obj).indexOf('kumar')
+// console.log(a)
+// let i = 0;
+// let a = arr.every((value) => {
+//     if(value > 4){
+//         i+=1;
+//         return true;
+//     }
+//     return false;
+// })
+// console.log(a , i)
+
+// let array = new Array(3).fill({});
+let array = [1, 42, 100,33, 4, 5 ]
+console.log(array[-1]);
+// array[4] = {};
+// array[4]['hi'] = "hi"
+// let array = new Array(4);
+// for(let i = 0 ; i< array.length ; i++) {
+//     // console.log(array[i])
+//     array[i] = new Array(4).fill(i)
+// };
+// console.log(array);
+
+// const array = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+
+// function isPrime(num) {
+//   for (let i = 2; num > i; i++) {
+//     if (num % i === 0) {
+//       return false;
+//     }
+//   }
+//   return num > 1;
+// }
+
+// console.log(array.filter(isPrime)); // [2, 3, 5, 7, 11, 13]
+
+const fruits = ["apple", "banana", "grapes", "mango", "orange"];
+
+/**
+ * Filter array items based on search criteria (query)
+ */
+// function filterItems(arr, query) {
+//   return arr.map((el) =>  {
+//     if(el.includes(query)){
+//     return el.toUpperCase();
+//   }
+//   return false
+//   })
+// }
+
+// console.log(filterItems(fruits, "ap")); // ['apple', 'grapes']
+// console.log(filterItems(fruits, "an")); // ['banana', 'mango', 'orange']
+// console.log(array.map(value => value = 3))
+// console.log(array);
+// console.log(array.indexOf())
+
+// let a = Array.of([0,0,0,"adsda"]).flat(1);
+// let a = array.reverse()
+// let a = array.splice(1,4,4,5,56)
+// console.log(a ,  array)
+    // sum += arr.filter( ( value ) => value % 2 === 0)
+
+// let a = array.toS
+// console.log(array)
+// const months = ["Mar", "Jan", "Feb", "Dec"];
+// const sortedMonths = months.toSorted();
+// console.log(sortedMonths); // ['Dec', 'Feb', 'Jan', 'Mar']
+// console.log(months); // ['Mar', 'Jan', 'Feb', 'Dec']
+
+// const values = [1, 10, 21, 2];
+// const sortedValues = values.toSorted((a, b) => a - b);
+// console.log(sortedValues); // [1, 2, 10, 21]
+// console.log(values); // [1, 10, 21, 2]
+console.log(array.toString())
