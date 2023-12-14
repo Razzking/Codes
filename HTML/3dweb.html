@@ -10,14 +10,14 @@
 
 <body>
     <div class="videocontainer">
-<!-- Background video -->
-        <video autoplay muted >
+        <!-- Background video -->
+        <video autoplay muted>
             <source src="/images/3dstyle.mp4" type="video/mp4" />
         </video>
-<!-- Navigation Bar -->
+        <!-- Navigation Bar -->
         <div class="navbar">
             <h2 style="color: #5bffdb;">LOGO</h2>
-<!-- Navigation Bar List  -->
+            <!-- Navigation Bar List  -->
             <ul class="navlist">
                 <li>Home</li>
                 <li>Registration</li>
@@ -26,73 +26,134 @@
                 <li>About</li>
             </ul>
         </div>
-<!-- Sign-up & Login Box -->
+        <!-- Sign-up & Login Box -->
         <div id="login" class="login">
-            <div  class="head">
+            <div class="head">
                 <p id="signuptext">SIGN UP</p>
             </div>
-<!-- Input Field In Login box -->
+            <!-- Input Field In Login box -->
             <div class="input">
-                <form >
-<!-- Fname & Lname Input Field -->
+                <form>
+                    <!-- Fname & Lname Input Field -->
                     <div id="username" class="head logd username">
                         <input type="text" class="name" placeholder="First Name" required>
-                        <input type="text" class="name" placeholder="Last Name" >
+                        <input type="text" class="name" placeholder="Last Name">
                     </div>
-<!-- Email Input Field -->
+                    <!-- Email Input Field -->
                     <div class="head logd">
                         <input type="email" class="name" placeholder="Email address or phone number" required>
                     </div>
-<!-- Password Input Field -->
+                    <!-- Password Input Field -->
                     <div class="head logd">
                         <input type="password" class="password" id="pass" placeholder="Password" required>
                     </div>
-<!-- Login & Signup Button -->
+                    <!-- Login & Signup Button -->
                     <div class="logd submit">
                         <input type="submit" value="Sign up" class="loginbutton" id="submit">
                     </div>
                     <p class="head logd">Already have an account?<span id="log_in"> Log in </span></p>
                     <hr>
-<!-- Direct Google Login Button -->
+                    <!-- Direct Google Login Button -->
                     <div class="logd submit">
-                        <input type="button" value="Login with Google" class="loginbutton google" id="submit">
+                        <input type="button" value="Login with Google" class="loginbutton google">
                     </div>
-<!-- Direct Facebook Login Button -->
+                    <!-- Direct Facebook Login Button -->
                     <div class="logd submit">
-                        <input type="button" value="Login with Facebook" class="loginbutton google facebook" id="submit">
+                        <input type="button" value="Login with Facebook" class="loginbutton google facebook">
                     </div>
                 </form>
             </div>
         </div>
     </div>
-<script>
-    let islogin = false;
-    let signuptext =document.getElementById("signuptext")
-    let username =  document.getElementById("username")
-    let submit = document.getElementById("submit")
-    let log_in = document.getElementById("log_in");
-    let signup = document.getElementById("login")
+    <script>
+        let islogin = false;
+        let signuptext = document.getElementById("signuptext")
+        let username = document.getElementById("username")
+        let submit = document.getElementById("submit")
+        let log_in = document.getElementById("log_in");
+        let signup = document.getElementById("login")
 
-    log_in.addEventListener("click" , ()=>{
-        if(islogin == true)
-        {
-            signup.classList.remove("signup");
-            signuptext.innerText = "SIGN UP";
-            username.style.display = "flex";
-            log_in.innerText = "Log in"
-        }
-        else
-        {
-            signup.classList.add("signup");
-            signuptext.innerText = "LOGIN";
-            username.style.display = "none";
-            log_in.innerText = "Sign up"
+        log_in.addEventListener("click", () => {
+            if (islogin == true) {
+                signup.classList.remove("signup");
+                signuptext.innerText = "SIGN UP";
+                username.style.display = "flex";
+                log_in.innerText = "Log in"
+            }
+            else {
+                signup.classList.add("signup");
+                signuptext.innerText = "LOGIN";
+                username.style.display = "none";
+                log_in.innerText = "Sign up"
 
-        }
-        islogin = !islogin;
-    })
-    
-</script>
+            }
+            islogin = !islogin;
+        })
+
+        // async function Movies(urls) {
+        //     // let p = fetch('https://jsonplaceholder.typicode.com/posts/1');
+
+        //     /*      With try catch for erroe handling in fetch api */
+        //     try {
+        //         const res = await fetch(urls[1]);
+        //         const res1 = await fetch(urls[0]);
+
+        //         const data = await res.json();
+        //         const data1 = await res1.json();
+
+        //         console.log(data, data1)
+        //         console.log(res.ok, res.status, res)
+
+        //     } catch (error) {
+        //         console.log(error);
+        //     }
+
+            /*      with using .then method in fetch api */
+            //  .then( response => { 
+            //     console.log(response)
+            //     return response.json() 
+            //  })
+            //  .then( (value) => { 
+            //     console.log( value ) 
+            //  })
+
+            /*      with async await fetch api */
+            // const mov = await response.json();
+            // console.log(mov);
+            // console.log(response);
+        // }
+        const urls = ['https://jsonplaceholder.typicode.com/posts/1', 'https://jsonplaceholder.typicode.com/posts/2']
+        // Movies(urls);
+        console.log("fetching data...")
+
+
+/*          promises all method test        */
+        // const p2 = new Promise((res, rej) => {
+        //    setTimeout( () => {
+        //     res("hello")
+        //    },2 * 1000)
+        // })
+        // const p1 = 32;
+        // const p3 = fetch("https://jsonplaceholder.typicode.com/todos/1")
+       
+        // Promise.allSettled([p1 ,p2, p3])
+        // .then( (result ) => {
+        //     return result[2].value.json()
+        // })
+        // .then( (result) => {
+        //     console.log( result)
+        // })
+        // .catch( error => console.log(error) )
+
+/*  multifetch */
+            async function multifetch(urls){
+                let res = await urls.map( (items) => {
+                    return fetch(items).then( res => res.json())
+                })
+                console.log(res)
+            }
+            multifetch(urls)
+    </script>
 </body>
 
 </html>

@@ -92,7 +92,7 @@
 // function User(name){
 //     this.name = name;
 //     this.lname = "kumar";
-    
+
 //     /* never create a function inside a constructor :- because every time its create a function ;   */
 //     // this.fullname = function(){
 //     //     return this.name + this.lname;
@@ -170,3 +170,115 @@
 // for(key in obj){
 //     console.log(`${typeof key} = ${typeof obj[key]}`)
 // 
+
+// async function loadData(url) {
+//     try {
+//         const res = await fetch(url);
+//         return await res.json();
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
+
+// const getData = async () => {
+//     return new Promise((res, rej) => {
+//         // res();
+//         setTimeout(() => {
+//             console.log("hii")
+//             res()
+
+//         }, 1000)
+//     })
+
+    // let y = await "Hello World";
+    // console.log(y);
+// }
+
+// console.log(2);
+
+// async function run() {
+//     console.log(1);
+//     await getData();
+//     console.log(2);
+//     // getData()
+// }
+
+
+// ( async () => {
+
+//     // await run()
+
+
+//     const url1 = 'https://jsonplaceholder.typicode.com/posts/1';
+//     const url2 = 'https://jsonplaceholder.typicode.com/posts/2';
+
+//     const post1 = await loadData(url1);
+//     console.log(post1)
+
+//     console.log("run")
+
+// })()
+// data();
+
+const urls = ['https://jsonplaceholder.typicode.com/posts/1', 'https://jsonplaceholder.typicode.com/posts/2']
+// Movies(urls);
+console.log("fetching data...")
+
+// const getData = async () => {
+//     let y =  "Hello World";
+//     return y
+// }
+// getData().then( y => console.log(y))
+// console.log(2);
+// console.log(2);
+// const data = function (){
+//     console.log("data ")
+// }
+// data();
+// console.log(2);
+// console.log(2);
+// console.log(2);
+// console.log(2);
+
+// async function multifetch(urls){
+//     const res = await urls.map( async (items) => {
+//         return (await fetch(items)).json();
+//     })
+//     console.log(res)
+//     return res;
+// }
+
+
+async function multifetch( urls ){
+    const response = await Promise.all(
+        urls.map( async (items) => {
+            return (await fetch( items )).json();
+        })
+    )
+    console.log( response )
+    // return response;
+}
+multifetch(urls)
+// async function fetchdata( urls ){
+//     const data = await multifetch( urls );
+//     return data;
+// }
+
+// console.log(multifetch(urls))
+
+// async function multifetch( urls ){
+//     const response = await Promise.all(
+//         urls.map( async (items) => {
+//             return (await fetch( items )).json();
+//         })
+//     )
+//     console.log( response )
+//     return response
+// }
+// async function fetchdata( urls ){
+//     const data = await multifetch( urls );
+//     return data;
+// }
+
+// console.log(fetchdata( urls ))
+// console.log(multifetch( urls ))

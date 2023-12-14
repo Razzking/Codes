@@ -17,6 +17,7 @@
         <input type="text" placeholder="Enter find Name " id="user">
         <input type="submit" value="submit">
     </form>
+    <p id="demo"></p>
 </body>
 <script>
 
@@ -35,7 +36,7 @@
     const Balance = document.getElementById("amount")
     const accountform = document.getElementById("accountform");
     const accountform1 = document.getElementById("accountform1");
-
+    const demo = document.getElementById("demo")
 // Add Bank account detailed...
     accountform.addEventListener("submit" , (e)=>{
         e.preventDefault();
@@ -47,9 +48,10 @@
 // Search Bank account detailed...
     accountform1.addEventListener("submit" , (e)=>{
         e.preventDefault();
-        var hello = Accounts.find(function(s){return s.customerName === user.value})
+        const hello = Accounts.find((s)=> s.customerName === user.value)
         console.clear();
         console.log(hello);
+        demo.innerText = hello.customerName
     });
 
 </script>

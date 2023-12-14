@@ -43,7 +43,7 @@ video{
     padding: 2vh 3vw;
 }
 .navbar .navlist li:hover{
-    background-color: #5bffdb;
+    background-color: #5bffdb9e;
     -webkit-text-stroke-color: black;
     cursor: pointer;
 }

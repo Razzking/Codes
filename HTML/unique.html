@@ -43,7 +43,6 @@
     function typewriter() {
         if (i <= text.length) {
             document.getElementById("type").innerHTML += text.charAt(i);
-            console.log(i)
             i++;
             setTimeout(typewriter, 40)
         }

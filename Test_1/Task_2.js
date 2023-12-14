@@ -4,7 +4,6 @@
 // Add a method 'introduce' that returns a string introducing the person.
 
 const person = {
-
     name : "rajnish",
     age : 18,
     job : "Devloper",
